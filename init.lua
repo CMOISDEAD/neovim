@@ -2,11 +2,11 @@ require 'options'
 require 'keymaps'
 
 -- [[ Basic Autocommands ]]
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+vim.api.nvim_create_autocmd('FileType', {
+  desc = "Proper 'formatoptions'",
+  group = vim.api.nvim_create_augroup('no-comments-o', { clear = true }),
   callback = function()
-    vim.hl.on_yank()
+    vim.cmd 'setlocal formatoptions-=c formatoptions-=o'
   end,
 })
 
@@ -37,5 +37,3 @@ require('lazy').setup {
     { import = 'plugins' },
   },
 }
-
--- vim: ts=2 sts=2 sw=2 et

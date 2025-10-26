@@ -6,7 +6,7 @@ return {
 
 			-- mini.colors
 			require('mini.colors').setup {}
-			vim.cmd 'colorscheme minicyan'
+			vim.cmd 'colorscheme minisummer'
 
 			-- mini.ai
 			require('mini.ai').setup {
@@ -23,13 +23,15 @@ return {
 
 			-- mini.statusline
 			local statusline = require 'mini.statusline'
-			statusline.setup { use_icons = vim.g.have_nerd_font }
-			statusline.section_location = function()
-				return '%2l:%-2v'
-			end
+			statusline.setup {
+				use_icons = vim.g.have_nerd_font,
+				section_location = function()
+					return '%2l:%-2v'
+				end,
+			}
 
 			-- mini.tabline
-			require('mini.tabline').setup()
+			-- require('mini.tabline').setup()
 
 			-- mini.basics
 			require('mini.basics').setup {
@@ -44,11 +46,15 @@ return {
 			-- mini.icons
 			local ext3_blocklist = { scm = true, txt = true, yml = true }
 			local ext4_blocklist = { json = true, yaml = true }
-			require('mini.icons').setup {
+			local MiniIcons = require 'mini.icons'
+			MiniIcons.setup {
+				style = 'ascii',
 				use_file_extension = function(ext, _)
 					return not (ext3_blocklist[ext:sub(-3)] or ext4_blocklist[ext:sub(-4)])
 				end,
 			}
+			MiniIcons.tweak_lsp_kind()
+			MiniIcons.mock_nvim_web_devicons()
 
 			-- mini.notify
 			require('mini.notify').setup()

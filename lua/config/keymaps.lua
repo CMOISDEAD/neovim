@@ -1,3 +1,6 @@
+local xmap = function(lhs, rhs, desc)
+	vim.keymap.set('x', lhs, rhs, { desc = desc })
+end
 local nmap = function(lhs, rhs, desc)
 	vim.keymap.set('n', lhs, rhs, { desc = desc })
 end
@@ -13,7 +16,12 @@ nmap('<Esc>', '<cmd>nohlsearch<CR>')
 nmap('j', 'gj')
 nmap('k', 'gk')
 
-nmap('<C-s>', ':w')
+xmap('j', 'gj')
+xmap('k', 'gk')
+
+nmap('<C-s>', ':w<CR>')
+
+xmap('<C-s>', ':w<CR>')
 
 -- Paste linewise before/after current line
 -- Usage: `yiw` to yank a word and `]p` to put it on the next line.

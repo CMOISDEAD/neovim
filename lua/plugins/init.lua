@@ -22,4 +22,7 @@ return {
 			},
 		},
 	},
+	{
+		'wakatime/vim-wakatime',
+	},
 }

@@ -8,9 +8,3 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.cmd 'setlocal formatoptions-=c formatoptions-=o'
 	end,
 })
-
-vim.api.nvim_create_autocmd('VimEnter', {
-	desc = 'Show custom dashboard on startup',
-	group = vim.api.nvim_create_augroup('Dashboard', { clear = true }),
-	callback = utils.show_tip,
-})

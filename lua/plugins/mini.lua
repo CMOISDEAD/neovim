@@ -4,9 +4,12 @@ return {
 		config = function()
 			local MiniExtra = require 'mini.extra'
 
+			-- mini.cmdline
+			require('mini.cmdline').setup {}
+
 			-- mini.colors
 			require('mini.colors').setup {}
-			vim.cmd 'colorscheme minisummer'
+			vim.cmd 'colorscheme flexoki'
 
 			-- mini.ai
 			require('mini.ai').setup {
@@ -40,6 +43,7 @@ return {
 					basic = true,
 					windows = true,
 					move_with_alt = true,
+					terminal = false,
 				},
 			}
 
@@ -155,6 +159,7 @@ return {
 						{ mode = 'n', keys = '<Leader>f', desc = '+Find' },
 						{ mode = 'n', keys = '<Leader>g', desc = '+Git' },
 						{ mode = 'n', keys = '<Leader>l', desc = '+Language' },
+						{ mode = 'n', keys = '<Leader>o', desc = '+Org' },
 						{ mode = 'n', keys = '<Leader>s', desc = '+Search' },
 						{ mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
 						{ mode = 'n', keys = '<Leader>q', desc = '+Quit' },
@@ -171,7 +176,7 @@ return {
 			}
 
 			-- mini.indentscope
-			require('mini.indentscope').setup()
+			-- require('mini.indentscope').setup {}
 
 			-- mini.trailspace
 			require('mini.trailspace').setup()

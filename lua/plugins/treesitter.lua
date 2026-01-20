@@ -4,6 +4,9 @@ return {
 		build = ':TSUpdate',
 		main = 'nvim-treesitter.configs',
 		opts = {
+			highlight = {
+				enable = true,
+			},
 			ensure_installed = {
 				'lua',
 				'vimdoc',
@@ -14,6 +17,8 @@ return {
 				'css',
 				'html',
 				'json',
+				'rust',
+				'yaml',
 			},
 			auto_install = true,
 		},

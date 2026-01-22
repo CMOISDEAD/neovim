@@ -31,7 +31,8 @@ return {
 		opts = {},
 	},
 	{
-		'kepano/flexoki-neovim',
-		name = 'flexoki',
+		'vague-theme/vague.nvim',
+		lazy = false,
+		priority = 1000,
 	},
 }

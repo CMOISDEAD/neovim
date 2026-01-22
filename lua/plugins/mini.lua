@@ -9,7 +9,7 @@ return {
 
 			-- mini.colors
 			require('mini.colors').setup {}
-			vim.cmd 'colorscheme flexoki'
+			vim.cmd 'colorscheme vague'
 
 			-- mini.ai
 			require('mini.ai').setup {
